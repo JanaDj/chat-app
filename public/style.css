@@ -1,0 +1,74 @@
+*{
+    margin: 0, auto;
+    padding: 0, auto;
+}
+body {
+    background: lightblue;
+    height: 100%;
+    width: 100%;
+}
+/* Index page specific */
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 5em;
+}
+
+#loginContainer {
+   margin: auto;
+   width: 20%;
+}
+
+#nameInput {
+    height: 3em;
+    width: 40;
+}
+
+#connectBtn {
+    height: 3em;
+    width: 75px;
+    background-color: white;
+}
+
+/*  Chat page specific */
+
+#chatContainer {
+    margin: auto;
+    width: 50%;
+    margin-right: 27%;
+}
+
+.ownMsg, .otherMsg {
+    width: 80%;
+    margin: 15px;
+    padding: 20px;
+}
+.ownMsg {
+    background-color: #f9fc9f;
+    margin-right: 20%;
+}
+
+.otherMsg {
+    background-color: #6de0f7;
+    margin-left: 20%;
+
+}
+
+.chatInfo {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+#sendMsgContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 40px;
+}
+
+#sendBtn {
+    background-color: white;
+}
