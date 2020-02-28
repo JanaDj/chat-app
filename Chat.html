@@ -1,37 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/style.css">
     <script defer src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
     <script defer src='client.js'></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- chat messages -->
-    <div id="chatContainer">
-        <!-- <div class="ownMsg">This message was sent by me</div>
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="ownMsg">This message was sent by me</div>
-        <div class="ownMsg">This message was sent by me</div>
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="ownMsg">This message was sent by me</div>
-        <div class="ownMsg">This message was sent by me</div>
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="otherMsg">This msg was sent by others </div> 
-        <div class="ownMsg">This message was sent by me</div> -->
-
+    <div id='container'>
+        <div id='chatContainer'>
+        </div>
+        <div id='msgContainer'>
+                <form id='sendMsgContainer'>
+                    <textarea id="messageInput" rows="12"></textarea>
+                    <button type='submit' id="sendBtn">Send</button>
+                </form>
+        </div>
     </div>
-    <!-- send message -->
-    <form id='sendMsgContainer'>
-        <textarea  id="messageInput" cols="30" rows="10"></textarea>
-        <button type='submit' id="sendBtn">Send</button>
-    </form>
 </body>
+
 </html>

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1> Welcome to Chat app </h1>
-    <div id='loginContainer'>
-        <form id='connectForm' action='Chat.html' method='GET'>
-        <input type='text' name='nameInput' id="nameInput">
-        <button type='submit' id='connectBtn' onclick="redirect()">Connect</button>
-        </form>
+    <div id='indexContainer'>
+        <h1> Welcome to The Chat app </h1>
+        <div id='loginContainer'>
+            <form id='connectForm' action='chat.html' method='GET'>
+                <input type='text' name='nameInput' id="nameInput">
+                <button  id='connectBtn' onclick="return redirect()">Chat</button>
+            </form>
+        </div>
+    </div>
     <script>
         function redirect() {
             const name = document.getElementById('nameInput');
-            if(name.value.trim().length){
-                document.getElementById('connectForm').submit();
+            if (name.value.trim().length) {
+                return true;
             } else {
                 alert('Please enter your name before connecting to the chat');
+                return false;
             }
         }
     </script>
-</div>
 </body>
+
 </html>
