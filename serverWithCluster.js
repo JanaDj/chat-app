@@ -11,6 +11,27 @@ const redisClient = redis.createClient(redisURL);
 const redisAdapter = require('socket.io-redis');
 io.adapter(redisAdapter(redisURL));
 
+// nodejs cluster 
+const os = require('os');
+const cluster = require('cluster');
+const clusterWorkSize = os.cpus().length;
+
+// setting up the multiple cpus feature via nodejs cluster module
+if (cluster.isMaster) {
+  for (let i = 0; i < clusterWorkSize; i++) {
+    cluster.fork();
+  }
+  cluster.on('online', worker => {
+    console.log(`Worker ${worker.id} is online`);
+
+  });
+  cluster.on('exit', worker => {
+    console.log(`Worker ${worker.id} has exited`);
+    console.log('Starting new worker');
+    cluster.fork();
+  });
+} else {
+
   //  handling CORS 
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -81,7 +102,7 @@ io.adapter(redisAdapter(redisURL));
     //  clears redis msgs on server start:  (used while testing)
     redisClient.flushall();
   });
-
+}
 
 
 
